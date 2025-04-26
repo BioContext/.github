@@ -16,7 +16,8 @@
 ## 🌐 What is BioContext?
 
 BioContext is a **collection of open-source MCP servers** that wrap dozens of biology & bio-medicine data APIs—plus reusable agents that let LLMs query them with minimal glue-code.  
-The goal is to remove repetitive plumbing so data scientists can focus on **reasoning over knowledge**, not wiring endpoints.
+
+The goal is to remove repetitive plumbing and enable agentic workflows for researchers and engineers in biomedical research
 
 ---
 
