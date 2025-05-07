@@ -20,7 +20,6 @@
 | :---: | --- | --- | --- | --- |
 | ✅ | **BioMart-MCP** | [BioMart](https://www.biomart.org) | Query federated genomic datasets via BioMart. | 2025-05-03 |
 | ✅ | **PubMed-MCP** | [PubMed](https://pubmed.ncbi.nlm.nih.gov) | Search & retrieve biomedical citations. | 2025-05-01 |
-| ✅ | **BioContext-main** | — | Meta-repo & Helm/Docker orchestration for all sub-servers. | 2025-04-21 |
 | ✅ | **OpenTargets-MCP** | [Open Targets Platform](https://platform.opentargets.org) | Drug-target evidence & associations. | 2025-04-21 |
 | ✅ | **AACT-MCP** | [AACT / ClinicalTrials.gov](https://aact.ctti-clinicaltrials.org) | Access aggregated clinical-trials data. | 2025-04-21 |
 | ✅ | **AlphaFold-MCP** | [AlphaFold DB](https://alphafold.ebi.ac.uk) | Retrieve predicted protein structures. | 2025-04-18 |
