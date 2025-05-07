@@ -1,38 +1,56 @@
+<!-- BioContext README — regenerated 2025-05-07 -->
 
-<!-- README.md for the BioContext GitHub organisation -->
+<p align="center">
+  <a href="https://discord.gg/dyArWuje" target="_blank">
+    <img src="https://img.shields.io/badge/Join%20our-Discord-5865F2?logo=discord&logoColor=white&style=for-the-badge"
+         alt="Discord invite">
+  </a>
+</p>
 
 # BioContext
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-online-success)](https://biocontext.ai/docs)
-[![Build](https://github.com/BioContext/.github/actions/workflows/ci.yaml/badge.svg)](https://github.com/BioContext/.github/actions)
-![SemVer](https://img.shields.io/badge/semver-2.0.0-blue)
-
 > **Enabling AI to speak the language of biology.**  
-> BioContext gathers Biomedical Model-Context-Protocol (MCP) **servers** and **agents** in a modular, interoperable ecosystem.
+> BioContext is an open-source collection of Model Context Protocol (MCP) servers that wrap major bio-databases and make them instantly query-able by LLMs and agent frameworks.
 
 ---
 
-## 🌐 What is BioContext?
+## Repositories (active)
 
-BioContext is a **collection of open-source MCP servers** that wrap dozens of biology & bio-medicine data APIs—plus reusable agents that let LLMs query them with minimal glue-code.  
+| Status | Repo | Data Source | Quick blurb | Last update* |
+| :---: | --- | --- | --- | --- |
+| ✅ | **BioMart-MCP** | [BioMart](https://www.biomart.org) | Query federated genomic datasets via BioMart. | 2025-05-03 |
+| ✅ | **PubMed-MCP** | [PubMed](https://pubmed.ncbi.nlm.nih.gov) | Search & retrieve biomedical citations. | 2025-05-01 |
+| ✅ | **BioContext-main** | — | Meta-repo & Helm/Docker orchestration for all sub-servers. | 2025-04-21 |
+| ✅ | **OpenTargets-MCP** | [Open Targets Platform](https://platform.opentargets.org) | Drug-target evidence & associations. | 2025-04-21 |
+| ✅ | **AACT-MCP** | [AACT / ClinicalTrials.gov](https://aact.ctti-clinicaltrials.org) | Access aggregated clinical-trials data. | 2025-04-21 |
+| ✅ | **AlphaFold-MCP** | [AlphaFold DB](https://alphafold.ebi.ac.uk) | Retrieve predicted protein structures. | 2025-04-18 |
+| ✅ | **UniProt-MCP** | [UniProt](https://www.uniprot.org) | Protein sequences & annotations. | 2025-04-17 |
+| ✅ | **ChemBL-MCP** | [ChEMBL](https://www.ebi.ac.uk/chembl) | Bioactivity / drug-like molecules. | 2025-04-17 |
+| ✅ | **PubChem-MCP** | [PubChem](https://pubchem.ncbi.nlm.nih.gov) | Compounds, substances & assays. | 2025-04-17 |
 
-The goal is to remove repetitive plumbing and enable agentic workflows for researchers and engineers in biomedical research
+\*“Last update” = last push on GitHub at time of this README refresh (7 May 2025).
+
+> Looking for install instructions?  
+> Every repo ships its own **README** with `pip`/`uv`/Docker commands and examples.
 
 ---
 
-## 🧩 Module Index
+## Why MCP?
 
-| Status | Module | Upstream API | Repository | Notes |
-|--------|--------|--------------|------------|-------|
-| ✅     | `mcp-clinicaltrials` | ClinicalTrials.gov | [`BioContext/clinicaltrials-mcp`](https://github.com/BioContext/clinicaltrials-mcp) | Search & study-detail endpoints |
-| ✅     | `mcp-pubchem` | PubChem PUG-REST | [`BioContext/pubchem-mcp`](https://github.com/BioContext/pubchem-mcp) | Compound → synonyms, 2-D/3-D fetch |
-| ✅     | `mcp-chembl` | ChEMBL | [`BioContext/chembl-mcp`](https://github.com/BioContext/chembl-mcp) | Bioactivity & target queries |
-| 🏗️     | `mcp-openfda` | openFDA / FAERS | [`BioContext/openfda-mcp`](https://github.com/BioContext/openfda-mcp) | Adverse-event & label search |
-| 🏗️     | `mcp-rxnorm` | RxNorm | *(planned)* | Drug-concept normalization |
-| 🏗️     | `mcp-disgenet` | DisGeNET | *(planned)* | Gene–disease associations |
-| 🏗️     | `mcp-stringdb` | STRING | *(planned)* | Protein–protein interactions |
-| 🏗️     | `mcp-gnomad` | gnomAD GraphQL | *(planned)* | Variant population frequencies |
-| …      | *more coming* | | | |
+MCP is an open specification that lets external tools expose **structured resources**, **tools**, and **prompts** to AI assistants over simple transports (STDIO, HTTP, SSE). Wrapping bio-databases behind MCP servers means:
 
-> **Legend**  ✅ = released & versioned   🏗️ = in active development
+* **Zero-boilerplate** integration with clients such as Claude Desktop, Cursor IDE, or AutoGen agents.  
+* **Schema discovery** – each tool is self-describing via JSON Schema.  
+* **Language-agnostic** – works with Python, Node, Go, Rust, … anything that can read/write JSON.
+
+---
+
+## Quick start (one-liner demo)
+
+```bash
+# Example: spin up PubChem-MCP in a fresh venv
+uv venv && source .venv/bin/activate
+pip install pubchem-mcp
+pubchem-mcp --stdio   # now point your MCP-aware client at STDIO
+
+Made with ❤️ by the BioContext maintainers — contributions and issue reports are welcome!
