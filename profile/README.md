@@ -53,4 +53,4 @@ uv venv && source .venv/bin/activate
 pip install pubchem-mcp
 pubchem-mcp --stdio   # now point your MCP-aware client at STDIO
 
-Made with ❤️ by the BioContext maintainers — contributions and issue reports are welcome!
+
